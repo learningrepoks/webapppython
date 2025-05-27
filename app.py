@@ -11,9 +11,11 @@ storage_client = StorageManagementClient(credential, subscription_id)
 
 @app.route("/storage-accounts")
 def list_storage_accounts():
-    accounts = storage_client.storage_accounts.list()
-    storage_list = [{"name": acc.name, "location": acc.location} for acc in accounts]
-    return jsonify(storage_list)
+    return "sai"
+# def list_storage_accounts():
+#     accounts = storage_client.storage_accounts.list()
+#     storage_list = [{"name": acc.name, "location": acc.location} for acc in accounts]
+#     return jsonify(storage_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
