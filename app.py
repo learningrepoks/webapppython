@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.storage import StorageManagementClient
@@ -13,6 +14,10 @@ storage_client = StorageManagementClient(credential, subscription_id)
 @app.route("/")
 def homepage():
     return "homepage"
+
+@app.route("/env")
+def env():
+    return os.environ
 
 @app.route("/storage-accounts")
 # def list_storage_accounts():
