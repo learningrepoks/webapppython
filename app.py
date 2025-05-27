@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Azure authentication
 subscription_id = "<YOUR_SUBSCRIPTION_ID>"
-credential = DefaultAzureCredential()
+credential = DefaultAzureCredential(managed_identity_client_id="21a0792a-71c0-452e-9467-40613d7f524e")
 storage_client = StorageManagementClient(credential, subscription_id)
 
 
