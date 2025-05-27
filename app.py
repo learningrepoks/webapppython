@@ -9,6 +9,11 @@ subscription_id = "<YOUR_SUBSCRIPTION_ID>"
 credential = DefaultAzureCredential()
 storage_client = StorageManagementClient(credential, subscription_id)
 
+
+@app.route("/")
+def homepage():
+    return "homepage"
+
 @app.route("/storage-accounts")
 def list_storage_accounts():
     return "sai"
